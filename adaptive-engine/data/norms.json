@@ -1,0 +1,42 @@
+{
+  "big5_extraversion": {
+    "mean": 0.0,
+    "sd": 1.0
+  },
+  "big5_agreeableness": {
+    "mean": 0.0,
+    "sd": 1.0
+  },
+  "big5_conscientiousness": {
+    "mean": 0.0,
+    "sd": 1.0
+  },
+  "big5_neuroticism": {
+    "mean": 0.0,
+    "sd": 1.0
+  },
+  "big5_openness": {
+    "mean": 0.0,
+    "sd": 1.0
+  },
+  "need_to_belong": {
+    "mean": 0.2,
+    "sd": 0.9
+  },
+  "sensation_seeking": {
+    "mean": -0.1,
+    "sd": 1.0
+  },
+  "activity_novelty": {
+    "mean": 0.0,
+    "sd": 1.0
+  },
+  "structure_preference": {
+    "mean": 0.0,
+    "sd": 1.0
+  },
+  "noise_tolerance": {
+    "mean": 0.0,
+    "sd": 1.0
+  }
+}
