@@ -2,12 +2,12 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// Screen imports (we'll create these next)
+// Screen imports
 import WelcomeScreen from '../screens/WelcomeScreen';
 import DemographicsScreen from '../screens/DemographicsScreen';
 import TimeAvailabilityScreen from '../screens/TimeAvailabilityScreen';
-import ActivityPreferencesScreen from '../screens/ActivityPreferencesScreen';
-import SocialStyleScreen from '../screens/SocialStyleScreen';
+import AdaptiveQuestioningScreen from '../screens/AdaptiveQuestioningScreen';
+import ProfileResultsScreen from '../screens/ProfileResultsScreen';
 import ChoiceExperimentsScreen from '../screens/ChoiceExperimentsScreen';
 import CompletionScreen from '../screens/CompletionScreen';
 
@@ -15,8 +15,8 @@ export type RootStackParamList = {
   Welcome: undefined;
   Demographics: undefined;
   TimeAvailability: undefined;
-  ActivityPreferences: undefined;
-  SocialStyle: undefined;
+  AdaptiveQuestioning: undefined;
+  ProfileResults: undefined;
   ChoiceExperiments: undefined;
   Completion: undefined;
 };
@@ -55,14 +55,14 @@ export const AppNavigator = () => {
           options={{ title: 'Your Availability' }}
         />
         <Stack.Screen
-          name="ActivityPreferences"
-          component={ActivityPreferencesScreen}
-          options={{ title: 'Activity Preferences' }}
+          name="AdaptiveQuestioning"
+          component={AdaptiveQuestioningScreen}
+          options={{ title: 'Personality & Preferences' }}
         />
         <Stack.Screen
-          name="SocialStyle"
-          component={SocialStyleScreen}
-          options={{ title: 'Social Style' }}
+          name="ProfileResults"
+          component={ProfileResultsScreen}
+          options={{ title: 'Your Profile', headerShown: false }}
         />
         <Stack.Screen
           name="ChoiceExperiments"

@@ -7,14 +7,19 @@ import {
   SocialStyle,
   ChoiceExperiment,
 } from '../types/survey';
+import { ProfileResponse } from '../api/adaptiveApi';
 
 interface SurveyContextType {
   surveyData: SurveyResponse;
+  adaptiveSessionId: string | null;
+  adaptiveProfile: ProfileResponse | null;
   updateDemographics: (data: Partial<Demographics>) => void;
   updateTimeAvailability: (data: TimeAvailability) => void;
   updateActivityPreferences: (data: Partial<ActivityPreferences>) => void;
   updateSocialStyle: (data: Partial<SocialStyle>) => void;
   addChoiceExperiment: (data: ChoiceExperiment) => void;
+  setAdaptiveSessionId: (id: string) => void;
+  setAdaptiveProfile: (profile: ProfileResponse) => void;
   resetSurvey: () => void;
 }
 
@@ -41,6 +46,8 @@ const initialSurveyData: SurveyResponse = {
 
 export const SurveyProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [surveyData, setSurveyData] = useState<SurveyResponse>(initialSurveyData);
+  const [adaptiveSessionId, setAdaptiveSessionId] = useState<string | null>(null);
+  const [adaptiveProfile, setAdaptiveProfile] = useState<ProfileResponse | null>(null);
 
   const updateDemographics = (data: Partial<Demographics>) => {
     setSurveyData((prev) => ({
@@ -79,17 +86,23 @@ export const SurveyProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const resetSurvey = () => {
     setSurveyData(initialSurveyData);
+    setAdaptiveSessionId(null);
+    setAdaptiveProfile(null);
   };
 
   return (
     <SurveyContext.Provider
       value={{
         surveyData,
+        adaptiveSessionId,
+        adaptiveProfile,
         updateDemographics,
         updateTimeAvailability,
         updateActivityPreferences,
         updateSocialStyle,
         addChoiceExperiment,
+        setAdaptiveSessionId,
+        setAdaptiveProfile,
         resetSurvey,
       }}
     >

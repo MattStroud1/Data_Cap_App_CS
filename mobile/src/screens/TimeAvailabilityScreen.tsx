@@ -23,7 +23,7 @@ const TimeAvailabilityScreen: React.FC<Props> = ({ navigation }) => {
 
   const handleNext = () => {
     updateTimeAvailability(timeAvailability);
-    navigation.navigate('ActivityPreferences');
+    navigation.navigate('AdaptiveQuestioning');
   };
 
   // Check if at least one time slot is selected
